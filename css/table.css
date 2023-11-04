@@ -17,6 +17,8 @@ button {
     display:block;
     padding: 100px;
     border-radius: 0;
+    font-size: x-large;
+    font-weight: bold;;
 }
 
 button:hover{
