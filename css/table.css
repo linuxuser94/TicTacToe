@@ -17,8 +17,10 @@ button {
     display:block;
     padding: 100px;
     border-radius: 0;
-    font-size: x-large;
-    font-weight: bold;;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: white;
+    color: white;
 }
 
 button:hover{
