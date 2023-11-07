@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // funkcija za loadanje svog html/css kontenta
   let p1, p2, p3, p4, p5, p6, p7, p8, p9; // sva polja u igri
 
+  p1 = document.getElementById("p1").innerHTML;
+  p2 = document.getElementById("p2").innerHTML;
+  p3 = document.getElementById("p3").innerHTML;
+  p4 = document.getElementById("p4").innerHTML;
+  p5 = document.getElementById("p5").innerHTML;
+  p6 = document.getElementById("p6").innerHTML;
+  p7 = document.getElementById("p7").innerHTML;
+  p8 = document.getElementById("p8").innerHTML;
+  p9 = document.getElementById("p9").innerHTML;
+
   let p_all; // varijabla za selektovanje svih elemenata koji se identificiraju kao polja
   let turn_count = 0; // brojac poteza koji signalizira kada nije X niti O pobjednik
 
@@ -12,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let x_wins = 0; // varijabla za sve X pobjede
   let o_wins = 0; // varijabla za sve O pobjede
   let draw = 0; // varijabla za nerijeseno
+
+  let restart_window = document.getElementById("restart_popup");
+  let restart_button = document.getElementById("restart_popup_dugme");
 
   document.getElementById("x_wins_html").innerHTML = "X pobjeda: " + x_wins;
   document.getElementById("o_wins_html").innerHTML = "O pobjeda: " + o_wins; // ispis pobjeda na ekranu
@@ -71,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (p3 === "X" && p5 === "X" && p7 === "X")
         ) {
           window.alert("X wins"),
+            func_restart(),
             (x_wins = x_wins + 1), // sabiranje pobjeda
             (document.getElementById("x_wins_html").innerHTML = x_wins),
             (document.getElementById("x_wins_html").innerHTML =
@@ -83,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (turn_count == 9) {
           // ako je igrano na svih 9 polja bez pobjednika, onda je nerijeseno
-          window.alert("Draw!"), (draw = draw + 1);
+          window.alert("Draw!"), (draw = draw + 1), func_restart();
         }
       } else {
         button.innerHTML = "O"; // upis OKS u polje
@@ -116,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (p3 === "O" && p5 === "O" && p7 === "O")
         ) {
           window.alert("O wins"),
+            func_restart(),
             (o_wins = o_wins + 1), // sabiranje OKS pobjeda
             (document.getElementById("x_wins_html").innerHTML =
               "X pobjeda: " + x_wins),
@@ -127,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (turn_count == 9) {
           window.alert("Draw!"),
+            func_restart(),
             (draw = draw + 1),
             (document.getElementById("x_wins_html").innerHTML =
               "X pobjeda: " + x_wins),
@@ -138,4 +154,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  function func_restart() {
+    restart_window.style.display = "initial";
+  }
+
+  restart_button.onclick = function func_destroy_popup() {
+    restart_window.style.display = "none";
+    document.getElementById("p1").innerHTML = "P1";
+    document.getElementById("p2").innerHTML = "P2";
+    document.getElementById("p3").innerHTML = "P3";
+    document.getElementById("p4").innerHTML = "P4";
+    document.getElementById("p5").innerHTML = "P5";
+    document.getElementById("p6").innerHTML = "P6";
+    document.getElementById("p7").innerHTML = "P7";
+    document.getElementById("p8").innerHTML = "P8";
+    document.getElementById("p9").innerHTML = "P9";
+    document.getElementById("p1").style.color = "gray";
+    document.getElementById("p2").style.color = "gray";
+    document.getElementById("p3").style.color = "gray";
+    document.getElementById("p4").style.color = "gray";
+    document.getElementById("p5").style.color = "gray";
+    document.getElementById("p6").style.color = "gray";
+    document.getElementById("p7").style.color = "gray";
+    document.getElementById("p8").style.color = "gray";
+    document.getElementById("p9").style.color = "gray";
+  };
 });

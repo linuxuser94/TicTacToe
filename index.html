@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/text.css" />
     <link rel="stylesheet" href="css/background.css" />
+    <link rel="stylesheet" href="css/restart_popup.css" />
   </head>
   <body>
     <script src="js/main.js"></script>
@@ -63,6 +64,14 @@
         <td><button type="button" id="p9" class="polje">P9</button></td>
       </tr>
     </table>
+
+    <div id="restart_popup">
+      <h5 id="restart_naslov">Pobjednik</h5>
+      <button onclick="restart_dugme()" id="restart_popup_dugme">
+        Igraj ponovo?
+      </button>
+    </div>
+
     <footer>
       <p>6-IT-IV/22 CEPS Student | email: dzebo.emir@gmail.com</p>
     </footer>
