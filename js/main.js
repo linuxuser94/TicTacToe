@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let o_wins = 0;
   let draw = 0;
 
+  document.getElementById("x_wins_html").innerHTML = "X pobjeda: " + x_wins;
+  document.getElementById("o_wins_html").innerHTML = "O pobjeda: " + o_wins;
+  document.getElementById("draw_html").innerHTML = "Neriješeno: " + draw;
+
   let player_turn_init = Math.floor(
     Math.random() * (maxValue - minValue + 1) + minValue
   );
@@ -61,7 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
           (p1 === "X" && p5 === "X" && p9 === "X") ||
           (p3 === "X" && p5 === "X" && p7 === "X")
         ) {
-          window.alert("X wins"), (x_wins = x_wins + 1);
+          window.alert("X wins"),
+            (x_wins = x_wins + 1),
+            (document.getElementById("x_wins_html").innerHTML = x_wins),
+            (document.getElementById("x_wins_html").innerHTML =
+              "X pobjeda: " + x_wins),
+            (document.getElementById("o_wins_html").innerHTML =
+              "O pobjeda: " + o_wins),
+            (document.getElementById("draw_html").innerHTML =
+              "Neriješeno: " + draw);
         }
 
         if (turn_count == 9) {
@@ -96,7 +108,25 @@ document.addEventListener("DOMContentLoaded", function () {
           (p1 === "O" && p5 === "O" && p9 === "O") ||
           (p3 === "O" && p5 === "O" && p7 === "O")
         ) {
-          window.alert("O wins"), (o_wins = o_wins + 1);
+          window.alert("O wins"),
+            (o_wins = o_wins + 1),
+            (document.getElementById("x_wins_html").innerHTML =
+              "X pobjeda: " + x_wins),
+            (document.getElementById("o_wins_html").innerHTML =
+              "O pobjeda: " + o_wins),
+            (document.getElementById("draw_html").innerHTML =
+              "Neriješeno: " + draw);
+        }
+
+        if (turn_count == 9) {
+          window.alert("Draw!"),
+            (draw = draw + 1),
+            (document.getElementById("x_wins_html").innerHTML =
+              "X pobjeda: " + x_wins),
+            (document.getElementById("o_wins_html").innerHTML =
+              "O pobjeda: " + o_wins),
+            (document.getElementById("draw_html").innerHTML =
+              "Neriješeno: " + draw);
         }
       }
     });

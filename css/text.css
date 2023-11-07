@@ -8,3 +8,27 @@ footer {
   font-family: "Ubuntu", sans-serif;
   color: white;
 }
+
+#scoreboard {
+  font-family: "Ubuntu", sans-serif;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+#x_wins_html {
+  color: darkblue;
+  padding-right: 11px;
+  border-right: 2.5px black solid;
+}
+
+#draw_html {
+  color: black;
+  padding-left: 11px;
+  padding-right: 11px;
+  border-right: 2.5px black solid;
+}
+
+#o_wins_html {
+  color: darkred;
+  padding-left: 11px;
+}
