@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (turn_count == 9) {
-          window.alert("Draw!"), (turn_count = turn_count + 1);
+          window.alert("Draw!"), (draw = draw + 1);
         }
       } else {
         button.innerHTML = "O";
