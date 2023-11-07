@@ -1,11 +1,10 @@
 #player_turn {
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
 }
 
-#potpis {
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
-    width: 100%;
+footer {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
 }
