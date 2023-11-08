@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // funkcija za loadanje svog html/css kontenta
   let p1, p2, p3, p4, p5, p6, p7, p8, p9; // sva polja u igri
 
-  p1 = document.getElementById("p1").innerHTML;
+  p1 = document.getElementById("p1").innerHTML; // selektujem tekst u dugmetu
   p2 = document.getElementById("p2").innerHTML;
   p3 = document.getElementById("p3").innerHTML;
   p4 = document.getElementById("p4").innerHTML;
@@ -11,6 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
   p7 = document.getElementById("p7").innerHTML;
   p8 = document.getElementById("p8").innerHTML;
   p9 = document.getElementById("p9").innerHTML;
+
+  let p1_b, p2_b, p3_b, p4_b, p5_b, p6_b, p7_b, p8_b, p9_b;
+
+  p1_b = document.getElementById("p1"); // B IS FOR BUTTON, selektujem dugme
+  p2_b = document.getElementById("p2");
+  p3_b = document.getElementById("p3");
+  p4_b = document.getElementById("p4");
+  p5_b = document.getElementById("p5");
+  p6_b = document.getElementById("p6");
+  p7_b = document.getElementById("p7");
+  p8_b = document.getElementById("p8");
+  p9_b = document.getElementById("p9");
+
+  const pb = [p1_b, p2_b, p3_b, p4_b, p5_b, p6_b, p7_b, p8_b, p9_b];
 
   let p_all; // varijabla za selektovanje svih elemenata koji se identificiraju kao polja
   let turn_count = 0; // brojac poteza koji signalizira kada nije X niti O pobjednik
@@ -161,23 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   restart_button.onclick = function func_destroy_popup() {
     restart_window.style.display = "none";
-    document.getElementById("p1").innerHTML = "P1";
-    document.getElementById("p2").innerHTML = "P2";
-    document.getElementById("p3").innerHTML = "P3";
-    document.getElementById("p4").innerHTML = "P4";
-    document.getElementById("p5").innerHTML = "P5";
-    document.getElementById("p6").innerHTML = "P6";
-    document.getElementById("p7").innerHTML = "P7";
-    document.getElementById("p8").innerHTML = "P8";
-    document.getElementById("p9").innerHTML = "P9";
-    document.getElementById("p1").style.color = "gray";
-    document.getElementById("p2").style.color = "gray";
-    document.getElementById("p3").style.color = "gray";
-    document.getElementById("p4").style.color = "gray";
-    document.getElementById("p5").style.color = "gray";
-    document.getElementById("p6").style.color = "gray";
-    document.getElementById("p7").style.color = "gray";
-    document.getElementById("p8").style.color = "gray";
-    document.getElementById("p9").style.color = "gray";
+    for (let i = 0; i < pb.length; i++) {
+      pb[i].disabled = true; // iskljuci dugme
+      pb[i].style.color = "gray"; // for petlja da oboji polja u sivo
+      pb[i].innerHTML = "P" + (i + 1); // da ocisti sva polja od X i O
+      turn_count = 0; // VEOMA BITNO!!!
+      // Ako je turn count iznad 9 igra ce se pokvariti!
+      // Jer varijabla turn count broji poteze do nerijesenog rezultata!
+      pb[i].disabled = false; // ukljuci dugme zavrsili smo
+    }
   };
 });
