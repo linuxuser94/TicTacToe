@@ -107,9 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
               "O pobjeda: " + o_wins), // update teksta za pobjede
             (document.getElementById("draw_html").innerHTML =
               "Neriješeno: " + draw);
-        }
-
-        if (turn_count == 9) {
+        } else if (turn_count == 9) {
           // ako je igrano na svih 9 polja bez pobjednika, onda je nerijeseno
           func_draw(),
             func_restart(),
@@ -160,9 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
               "O pobjeda: " + o_wins), // ispis na stranicu statusa pobjeda
             (document.getElementById("draw_html").innerHTML =
               "Neriješeno: " + draw);
-        }
-
-        if (turn_count == 9) {
+        } else if (turn_count == 9) {
           func_draw(),
             func_restart(),
             (draw = draw + 1),
