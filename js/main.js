@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (p1 === "X" && p5 === "X" && p9 === "X") ||
           (p3 === "X" && p5 === "X" && p7 === "X")
         ) {
-          window.alert("X wins"),
+          func_x_win(),
             func_restart(),
             (x_wins = x_wins + 1), // sabiranje pobjeda
             (document.getElementById("x_wins_html").innerHTML = x_wins),
@@ -111,7 +111,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (turn_count == 9) {
           // ako je igrano na svih 9 polja bez pobjednika, onda je nerijeseno
-          window.alert("Draw!"), (draw = draw + 1), func_restart();
+          func_draw(),
+            func_restart(),
+            (draw = draw + 1),
+            (document.getElementById("x_wins_html").innerHTML =
+              "X pobjeda: " + x_wins),
+            (document.getElementById("o_wins_html").innerHTML =
+              "O pobjeda: " + o_wins),
+            (document.getElementById("draw_html").innerHTML =
+              "Neriješeno: " + draw);
         }
       } else {
         button.innerHTML = "O"; // upis OKS u polje
@@ -143,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
           (p1 === "O" && p5 === "O" && p9 === "O") ||
           (p3 === "O" && p5 === "O" && p7 === "O")
         ) {
-          window.alert("O wins"),
+          func_o_win(),
             func_restart(),
             (o_wins = o_wins + 1), // sabiranje OKS pobjeda
             (document.getElementById("x_wins_html").innerHTML =
@@ -155,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (turn_count == 9) {
-          window.alert("Draw!"),
+          func_draw(),
             func_restart(),
             (draw = draw + 1),
             (document.getElementById("x_wins_html").innerHTML =
@@ -187,4 +195,16 @@ document.addEventListener("DOMContentLoaded", function () {
       pb[i].disabled = false; // ukljuci dugme zavrsili smo
     }
   };
+
+  function func_x_win() {
+    document.getElementById("restart_naslov").innerHTML = "X je pobijedio!";
+  }
+
+  function func_o_win() {
+    document.getElementById("restart_naslov").innerHTML = "OKS je pobijedio!";
+  }
+
+  function func_draw() {
+    document.getElementById("restart_naslov").innerHTML = "Neriješeno!";
+  }
 });
