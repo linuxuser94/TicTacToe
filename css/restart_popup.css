@@ -5,7 +5,7 @@
   z-index: 1;
   left: 50%;
   top: 50%;
-  background-color: #657984;
+  background-color: #62bff9;
   border: 5px solid black;
   height: 600;
   width: 400;
@@ -13,18 +13,18 @@
 }
 
 #restart_naslov {
-  background-color: #657984;
+  background-color: #62bff9;
   text-align: center;
 }
 
 #restart_popup_dugme {
-  background-color: #657984;
+  background-color: #223843;
+  color: #f0e2e7;
   border-top: 5px solid black;
   padding: 50px;
   font-size: xx-large;
 }
 
 #restart_popup_dugme:hover {
-  color: yellow;
-  background-color: gray;
+  color: #fff05a;
 }

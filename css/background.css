@@ -1,5 +1,5 @@
 body {
-  background-color: #657984;
+  background-color: #62bff9;
 }
 
 footer {
@@ -7,5 +7,6 @@ footer {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #2f2824;
+  background-color: #223843;
+  border-top: 2px solid #f0e2e7;
 }

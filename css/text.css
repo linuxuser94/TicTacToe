@@ -32,3 +32,18 @@ footer {
   color: darkred;
   padding-left: 11px;
 }
+
+#github_link {
+  color: #f0e2e7;
+  text-decoration: none;
+}
+
+#github_link:visited {
+  color: #f0e2e7;
+  text-decoration: none;
+}
+
+#github_link:hover {
+  color: #fff05a;
+  text-decoration: none;
+}

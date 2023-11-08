@@ -171,13 +171,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function func_restart() {
     restart_window.style.display = "initial";
+    for (let i = 0; i < pb.length; i++) {
+      pb[i].disabled = true; // iskljuci dugme
+    }
   }
 
   restart_button.onclick = function func_destroy_popup() {
     restart_window.style.display = "none";
     for (let i = 0; i < pb.length; i++) {
-      pb[i].disabled = true; // iskljuci dugme
-      pb[i].style.color = "gray"; // for petlja da oboji polja u sivo
+      pb[i].style.color = "#f0e2e7"; // for petlja da oboji polje u neutralnu boju
       pb[i].innerHTML = "P" + (i + 1); // da ocisti sva polja od X i O
       turn_count = 0; // VEOMA BITNO!!!
       // Ako je turn count iznad 9 igra ce se pokvariti!
